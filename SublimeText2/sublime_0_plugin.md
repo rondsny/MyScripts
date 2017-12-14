@@ -5,5 +5,7 @@
 - Sublime-Erlang erlang插件
     - https://github.com/fjl/Sublime-Erlang
 
-
+- Alignment 对齐插件
+    - 热键
+    - setting设置需要对齐的字符
 
