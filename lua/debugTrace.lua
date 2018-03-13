@@ -13,8 +13,16 @@ traceXXX = not bDebug and function () end or
         local mod      = string.match(source, "/([_%w]+).lua$")
         if not mod then mod = "" end
         local preMsg = string.format("[XXX] %s:%s %s", mod, dLine, funcName)
-        
+
         print(preMsg, ...)
+
+        preMsg  = string.format("> %s:%s ", mod, dLine)
+        local f = io.open("Trace.log","a+")
+        f:write(preMsg)
+        f:write(table.concat({...}, " "))
+        f:write("\n")
+        f:flush()
+        io.close()
     end
 
 -- e.g.
