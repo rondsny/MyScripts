@@ -8,4 +8,4 @@
     - 热键
     - setting设置需要对齐的字符
 - sublime-edit-command-palette 运行脚本
-    - https://packagecontrol.io/packages/Edit%20Command%20Palette
+    - https://packagecontrol.io/packages/Edit%20Command%20Palette
