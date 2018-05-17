@@ -241,13 +241,13 @@ seconds_elapsed_since_this_week({DayOfTheWeek, Hour, Min, Sec})
 
 
 get_call_from(N) ->
-    lists:sublist(xg_util:get_call_stack(), 3, N).
+    lists:sublist(rf_util:get_call_stack(), 3, N).
 
 get_call_from() ->
-    lists:sublist(xg_util:get_call_stack(), 3, 1).
+    lists:sublist(rf_util:get_call_stack(), 3, 1).
 
 get_call_from_line() ->
-    lists:sublist(xg_util:get_call_stack(), 3, 1).
+    lists:sublist(rf_util:get_call_stack(), 3, 1).
 
 get_call_stack() ->
     try
@@ -430,8 +430,8 @@ rand_del(_, Acc, _) ->
 
 %% 随机点, 以{PX, PY}为圆心, 以Radius为半径
 rand_position({PX, PY}, Radius) ->
-    Dir = xg_util:rand() * math:pi(),
-    Rad = xg_util:rand() * Radius,
+    Dir = rf_util:rand() * math:pi(),
+    Rad = rf_util:rand() * Radius,
     PX1 = PX + Rad * math:cos(Dir),
     PY1 = PY + Rad * math:sin(Dir),
     {PX1, PY1}.
@@ -892,8 +892,8 @@ a_test() ->
     S3 = {B, E},
     S4 = {C, F},
 
-    2.0 = segments_distance(S1, S2),
-    1.0 = segments_distance(S1, S3),
-    segments_distance(S1, S4).
+    2.0 = rf_util:segments_distance(S1, S2),
+    1.0 = rf_util:segments_distance(S1, S3),
+    rf_util:segments_distance(S1, S4).
 
 -endif.
