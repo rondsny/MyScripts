@@ -49,7 +49,7 @@ class rWhiteList
      */
     public static function checkWhiteIpList($cur_ip, $check_ip_list){
 
-        $cur_decimal = sgComUtil::ipStr2Decimal($cur_ip);
+        $cur_decimal = rWhiteList::ipStr2Decimal($cur_ip);
 
         foreach ($check_ip_list as $key => $value) {
             $ipl      = explode("/", $value);
@@ -59,7 +59,7 @@ class rWhiteList
                 $duan = $ipl[1];
             }
 
-            $a_decimal = sgComUtil::ipStr2Decimal($check_ip);
+            $a_decimal = rWhiteList::ipStr2Decimal($check_ip);
 
             $step = 32-$duan; // 右移偏移量
 
@@ -75,7 +75,7 @@ class rWhiteList
 
     // 检查当前ip是否合法
     public static function checkCurIp($check_ip_list){
-        $cur_ip = sgComUtil::getIp();
-        return sgComUtil::checkWhiteIpList($cur_ip, $check_ip_list);
+        $cur_ip = rWhiteList::getIp();
+        return rWhiteList::checkWhiteIpList($cur_ip, $check_ip_list);
     }
 }
