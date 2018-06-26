@@ -24,7 +24,7 @@ class rWhiteList
     }
 
     // 获取请求ip地址
-    public static function getIp()
+    public static function get_ip()
     {
         if (getenv('HTTP_CLIENT_IP')) {
             $ip = getenv('HTTP_CLIENT_IP');
@@ -75,7 +75,7 @@ class rWhiteList
 
     // 检查当前ip是否合法
     public static function check_cur_ip($check_ip_list){
-        $cur_ip = sgComUtil::getIp();
+        $cur_ip = sgComUtil::get_ip();
         return sgComUtil::check_white_ip_list($cur_ip, $check_ip_list);
     }
 }
