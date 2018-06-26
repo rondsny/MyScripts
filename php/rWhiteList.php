@@ -11,7 +11,7 @@
 class rWhiteList
 {
     // 点分十进制地址转十进制
-    public static function ip_str_to_decimal($ip){
+    public static function ipStr2Decimal($ip){
         $tmps    = explode(".", $ip);
         $decimal = 0;
 
@@ -24,7 +24,7 @@ class rWhiteList
     }
 
     // 获取请求ip地址
-    public static function get_ip()
+    public static function getIp()
     {
         if (getenv('HTTP_CLIENT_IP')) {
             $ip = getenv('HTTP_CLIENT_IP');
@@ -47,9 +47,9 @@ class rWhiteList
      * @check_ip_list 白名单列表，格式为"192.168.0.0/16"的列表，没有子网掩码时
      *      按照32计算
      */
-    public static function check_white_ip_list($cur_ip, $check_ip_list){
+    public static function checkWhiteIpList($cur_ip, $check_ip_list){
 
-        $cur_decimal = sgComUtil::ip_str_to_decimal($cur_ip);
+        $cur_decimal = sgComUtil::ipStr2Decimal($cur_ip);
 
         foreach ($check_ip_list as $key => $value) {
             $ipl      = explode("/", $value);
@@ -59,7 +59,7 @@ class rWhiteList
                 $duan = $ipl[1];
             }
 
-            $a_decimal = sgComUtil::ip_str_to_decimal($check_ip);
+            $a_decimal = sgComUtil::ipStr2Decimal($check_ip);
 
             $step = 32-$duan; // 右移偏移量
 
@@ -74,8 +74,8 @@ class rWhiteList
     }
 
     // 检查当前ip是否合法
-    public static function check_cur_ip($check_ip_list){
-        $cur_ip = sgComUtil::get_ip();
-        return sgComUtil::check_white_ip_list($cur_ip, $check_ip_list);
+    public static function checkCurIp($check_ip_list){
+        $cur_ip = sgComUtil::getIp();
+        return sgComUtil::checkWhiteIpList($cur_ip, $check_ip_list);
     }
 }
