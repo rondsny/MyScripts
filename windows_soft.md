@@ -1,3 +1,3 @@
 - f.lux 屏幕亮度调节软件 (https://justgetflux.com/)
 - picpick 截屏 (https://picpick.app/)
-- launchy 快捷启动软件 ()
+- launchy 快捷启动软件 (https://www.launchy.net/)
