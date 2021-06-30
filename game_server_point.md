@@ -1,6 +1,6 @@
 ### part 1
 
-- AOI
+- AOI       九宫格/十字链表/二叉树/四叉树
 - 技能
 - buff
 - 子弹
@@ -8,8 +8,7 @@
 - NPC
 - monster
 - 特效
-- 寻路
-- 地形
+- 地形/寻路   https://github.com/recastnavigation/recastnavigation
 
 ### part 2
 
