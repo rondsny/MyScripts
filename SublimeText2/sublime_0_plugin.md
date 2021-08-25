@@ -9,3 +9,6 @@
     - setting设置需要对齐的字符
 - sublime-edit-command-palette 运行脚本
     - https://packagecontrol.io/packages/Edit%20Command%20Palette
+- copy_file_name.py
+    - 添加拷贝文件名命令
+    - Context.sublime-menu 配置右键命令
