@@ -12,3 +12,5 @@
 - copy_file_name.py
     - 添加拷贝文件名命令
     - Context.sublime-menu 配置右键命令
+- Bracket Highlighter: 代码匹配（括号引号...）
+- Doc Blockr: 优美的注释
